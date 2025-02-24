@@ -50,6 +50,3 @@ For most systems, the alias is `python3`.
 ## Notes
 - Ensure all required dependencies are installed before running the app.
 - Output images maintain a consistent resolution for uniformity (the aspect rations may be deformed).
-
-This documentation provides a clear guide on how to install, configure, and use the app efficiently.
-
