@@ -1,30 +1,56 @@
-# python app to correct image persppective
+# Image Perspective Correction App
 
-## How to start it
+## Overview
+The Image Perspective Correction App is a Python-based tool that allows users to correct the perspective of images in a given directory. It ensures uniform cropping and resizing to standard dimensions while maintaining a corrected aspect ratio.
 
-Install python (or confirm you have installed it)
+## Installation
+### Prerequisites
+Ensure you have Python installed on your system. To check if Python is installed and determine its alias, run the following commands:
 
-try 
-
-which python 
+```sh
+which python
 which py
 which python3
+```
 
-to find out if it is installed and which alias, for me it is python3
+For most systems, the alias is `python3`.
 
-python3 -m venv venv . - r requirements.txt
+### Setup
+1. Create a virtual environment and install dependencies:
 
-source /venv/bin/activate
+   ```sh
+   python3 -m venv venv
+   . venv/bin/activate  # On macOS/Linux
+   venv\Scripts\activate  # On Windows
+   pip install -r requirements.txt
+   ```
 
-python app.py
+2. Start the application:
 
-## How to use it
+   ```sh
+   python app.py
+   ```
 
-add the path where the images are to source folders.json
-add the path where you want the result to the file as well 
+## Usage
+1. **Configure Source and Destination**
+   - Open `folders.json`.
+   - Add the path to the folder containing the source images.
+   - Specify the destination folder where corrected images should be saved.
 
+2. **Image Processing**
+   - The app will prompt you to crop all images.
+   - You must crop images until the number of cropped and uncropped images are equal.
+   - Cropped images will be resized to `1000x1000` pixels with corrected aspect ratios.
+   - The images will be saved in JPG format.
 
-all the images that are cropped will be savedf there, once yu open the app it will ask you to ctop all the images until you have the same cropped as not cropped
-the cropped are resized to 1000x1000 and the aspect ratio is corrected (sometimes they may look a bit weird but it is the only option to have a common coordinate system in my opinion)
+3. **Output**
+   - Corrected images will be stored in the designated output folder.
+   - Some images may appear slightly distorted due to aspect ratio adjustments, but this ensures a common coordinate system.
 
-the images are saved in jpg
+## Notes
+- Ensure all required dependencies are installed before running the app.
+- Cropping is mandatory for proper correction.
+- Output images maintain a consistent resolution for uniformity.
+
+This documentation provides a clear guide on how to install, configure, and use the app efficiently.
+
