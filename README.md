@@ -49,8 +49,7 @@ For most systems, the alias is `python3`.
 
 ## Notes
 - Ensure all required dependencies are installed before running the app.
-- Cropping is mandatory for proper correction.
-- Output images maintain a consistent resolution for uniformity.
+- Output images maintain a consistent resolution for uniformity (the aspect rations may be deformed).
 
 This documentation provides a clear guide on how to install, configure, and use the app efficiently.
 
