@@ -38,9 +38,8 @@ For most systems, the alias is `python3`.
    - Specify the destination folder where corrected images should be saved.
 
 2. **Image Processing**
-   - The app will prompt you to crop all images.
-   - You must crop images until the number of cropped and uncropped images are equal.
-   - Cropped images will be resized to `1000x1000` pixels with corrected aspect ratios.
+   - The app will prompt you to correct all images.
+   - The images will be cropped, the perspective will be corrected and then tehy will be resized to `1000x1000` pixels with corrected aspect ratios.
    - The images will be saved in JPG format.
 
 3. **Output**
