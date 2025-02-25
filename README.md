@@ -1,7 +1,7 @@
 # Image Perspective Correction App
 
 ## Overview
-The Image Perspective Correction App is a Python-based tool that allows users to correct the perspective of images in a given directory. It ensures uniform cropping and resizing to standard dimensions while maintaining a corrected aspect ratio.
+This App is a Python-based tool that allows you to correct the perspective of images in a given directory. It ensures uniform cropping and resizing to standard dimensions.
 
 ## Installation
 ### Prerequisites
@@ -16,7 +16,7 @@ which python3
 For most systems, the alias is `python3`.
 
 ### Setup
-1. Create a virtual environment and install dependencies:
+1. Create a virtual environment and install dependencies (instead of python3 use your alias):
 
    ```sh
    python3 -m venv venv
