@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import Button, Canvas
 from PIL import ImageTk
 from image_class import ImageData
 
