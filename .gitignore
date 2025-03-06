@@ -4,3 +4,4 @@ Old_app/
 __pycache__/
 Object_detection/
 venv/
+.DS_store
