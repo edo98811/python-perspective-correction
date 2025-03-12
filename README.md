@@ -39,7 +39,7 @@ For most systems, the alias is `python3`.
 
 2. **Image Processing**
    - The app will prompt you to correct all images.
-   - The images will be cropped, the perspective will be corrected and then tehy will be resized to `1000x1000` pixels with corrected aspect ratios.
+   - The images will be cropped, the perspective will be corrected and then they will be resized to `1000x1000` pixels with corrected aspect ratios.
    - The images will be saved in JPG format.
 
 3. **Output**
