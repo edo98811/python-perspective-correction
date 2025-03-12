@@ -29,7 +29,7 @@ class ImageCropperApp:
 
         # Apply transformation button
         # Instruction label instead of "Apply Transform" button
-        self.instruction_label = tk.Label(button_frame, text="Select the edges of the table points to continue... IMPORTANT: always start from same corner (lower left)", fg="grey", font=("Arial", 12, "bold"))
+        self.instruction_label = tk.Label(button_frame, text="Select the edges of the table points to continue...", fg="grey", font=("Arial", 12, "bold"))
         self.instruction_label.pack(side="left", padx=10)
 
         # Reset selection button (hidden initially)

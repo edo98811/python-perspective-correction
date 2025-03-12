@@ -55,7 +55,9 @@ class ImageData:
             return
 
         # Convert points to a NumPy array
-        pts_src = np.array(self.points, dtype=np.float32)
+        pts_src = self.reorder_points()
+        print(pts_src)
+        # pts_src = np.array(self.points, dtype=np.float32)
 
         # Compute the width and height dynamically based on input points
         width = int(max(np.linalg.norm(pts_src[1] - pts_src[0]), np.linalg.norm(pts_src[2] - pts_src[3])))
@@ -74,10 +76,11 @@ class ImageData:
         warped = cv2.warpPerspective(img_cv, matrix, (width, height))
 
         # Now resize the warped image to 1000x1000
-        resized_warped = cv2.resize(warped, (1000, 1000))
+        resized_warped = cv2.resize(warped, (800, 800))
 
         # Convert back to PIL image and store it
         self.warped_image = Image.fromarray(resized_warped)
+        self.warped_image.thumbnail((1000, 1000)) 
 
 
     def find_folders(self):
@@ -105,3 +108,36 @@ class ImageData:
     def reset_points(self):
         """Reset the selected points."""
         self.points = []
+
+    def reorder_points(self):
+        """Reorders self.points to follow the order: 
+        - (min x, min y) 
+        - (max x, min y) 
+        - (max x, max y) 
+        - (min x, max y)
+        """
+        pts = np.array(self.points, dtype=np.float32)
+
+        # Sort by y-coordinate first, then by x-coordinate
+        pts = sorted(pts, key=lambda p: (p[1], p[0]))
+
+        # (min x, min y)      (max x, min y)
+        #     0 -------------- 1
+        #     |                |
+        #     |                |
+        #     |                |
+        #     |                |
+        #     3 -------------- 2
+        # (min x, max y)      (max x, max y)
+
+        # Top-left (smallest y, then smallest x) 
+        top_left = pts[0] if pts[0][0] < pts[1][0] else pts[1] # "take the first if the first is more on the left"
+        # Top-right (smallest y, then largest x)
+        top_right = pts[1] if pts[1][0] > pts[0][0] else pts[0] # "take the second if the second is more on the right"
+        # Bottom-right (largest y, then largest x)
+        bottom_right = pts[2] if pts[2][0] > pts[3][0] else pts[3] # "take the first if the first is more on the right"
+        # Bottom-left (largest y, then smallest x)
+        bottom_left = pts[3] if pts[3][0] < pts[2][0] else pts[2] # "take the second if the second is more on the left"
+
+        # Reordered array
+        return np.array([top_left, top_right, bottom_right, bottom_left], dtype=np.float32)
