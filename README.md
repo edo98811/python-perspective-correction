@@ -33,9 +33,9 @@ For most systems, the alias is `python3`.
 
 ## Usage
 1. **Configure Source and Destination**
-   - Open `folders.json`.
+   - Open `source_folders.json`.
    - Add the path to the folder containing the source images.
-   - Specify the destination folder where corrected images should be saved.
+   - Add the path to the destination folder where corrected images should be saved.
 
 2. **Image Processing**
    - The app will prompt you to correct all images.
