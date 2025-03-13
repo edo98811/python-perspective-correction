@@ -39,8 +39,8 @@ class ImageData:
             save_path = os.path.join(self.destination_folder, self.image_name)
 
             # Check if saving as HEIC
-            if self.image_name.lower().endswith(".heic"):
-                save_path = os.path.join(self.destination_folder, self.image_name.replace(".heic", ".jpg"))
+            if self.image_name.endswith(".HEIC") or self.image_name.endswith(".heic"):
+                save_path = os.path.join(self.destination_folder, self.image_name.replace(".heic", ".jpg").replace(".HEIC", ".jpg"))
                 self.warped_image = self.warped_image.convert("RGB")  # Convert to RGB for JPEG
                 self.warped_image.save(save_path, format="JPEG", quality=95)  # Save as JPG
             else:
