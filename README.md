@@ -45,6 +45,7 @@ For most systems, the alias is `python3`.
 3. **Output**
    - Corrected images will be stored in the designated output folder.
    - Some images may appear slightly distorted due to aspect ratio adjustments, but this ensures a common coordinate system.
+   - You should not change the name of the images in the new folder, the app opens on its own images until all have been corrected, and the two folders have the same content. If you are not happy with one of the corrected images just delete it from the destination folder and it will be promped again
 
 ## Notes
 - Ensure all required dependencies are installed before running the app.
