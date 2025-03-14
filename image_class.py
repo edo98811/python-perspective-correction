@@ -92,12 +92,15 @@ class ImageData:
         self.destination_folder = folders['destination_folder']
 
     def find_next_image(self):
-
         all_files = os.listdir(self.source_folder)
         all_destinations = os.listdir(self.destination_folder)
 
+        # Extract base names without extensions for comparison
+        base_destinations = {os.path.splitext(f)[0] for f in all_destinations}
+
         for file_name in all_files:
-            if file_name not in all_destinations:
+            base_name, ext = os.path.splitext(file_name)
+            if base_name not in base_destinations:
                 self.image_name = file_name
                 self.image_path = os.path.join(self.source_folder, file_name)
                 self.image = None
